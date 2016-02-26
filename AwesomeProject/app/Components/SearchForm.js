@@ -15,6 +15,7 @@ import React, {
 import icons from '../Assets/Icons';
 import styles from '../Styles/Main';
 import Loading from './Loading';
+import SearchResult from './SearchResult';
 
 class SearchForm extends React.Component {
   constructor(props) {
@@ -124,14 +125,14 @@ class SearchForm extends React.Component {
           opacity: 0,
         });
         console.log(responseData);
-        // this.props.navigator.push({
-        //   title: responseData.title,
-        //   component: SearchResult,
-        //   passProps: {
-        //     results: responseData,
-        //     query: this.state.query,
-        //   }
-        // });
+        this.props.navigator.push({
+          title: responseData.title,
+          component: SearchResult,
+          passProps: {
+            results: responseData,
+            query: this.state.query,
+          }
+        });
       })
       .done();
   }
@@ -201,7 +202,6 @@ class SearchForm extends React.Component {
             style={{height: 50}}
             placeholder="搜索 ..."
             // placeholderTextColor="red"
-            clearButtonMode="while-editing"
             returnKeyType="search"
             // secureTextEntry
             // autoFocus={true}
@@ -216,6 +216,16 @@ class SearchForm extends React.Component {
               });
             }}
             onSubmitEditing={this.fetchData.bind(this)}
+
+            // onFocus={() => console.log('onFocus')}
+            // onBlur={() => console.log('onBlur')}
+            // onChange={() => console.log('onChange')}
+            // onEndEditing={() => console.log('onEndEditing')}
+
+            // 下面是iOS中的属性
+            clearButtonMode="while-editing"
+            // clearTextOnFocus={true}
+            // enablesReturnKeyAutomatically={true}
            />
            <ActivityIndicatorIOS
              size="small"
@@ -223,7 +233,7 @@ class SearchForm extends React.Component {
              animating={!this.state.loaded}
              style={{
                position: 'absolute',
-               right: 10,
+               right: 5,
                top: 20,
                opacity: this.state.opacity
              }}
