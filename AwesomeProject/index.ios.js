@@ -10,14 +10,15 @@ import React, {
 
 import icons  from './app/Assets/Icons';
 import One from './app/Components/One';
-import OneContent from './app/Components/OneContent';
 import Two from './app/Components/Two';
+import Search from './app/Components/Search';
+import User from './app/Components/User';
 
 class AwesomeProject extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
-        selectedTab: 'one'
+        selectedTab: 'search'
       };
   }
 
@@ -47,7 +48,29 @@ class AwesomeProject extends React.Component {
           }}>
           <Two />
         </TabBarIOS.Item>
-      </TabBarIOS>
+        <TabBarIOS.Item
+            icon={{uri: icons.search, scale: 4.6}}
+            title="搜索"
+            selected={this.state.selectedTab === 'search'}
+            onPress={() => {
+              this.setState({
+                selectedTab: 'search'
+              });
+            }}>
+            <Search />
+          </TabBarIOS.Item>
+          <TabBarIOS.Item
+            icon={{uri: icons.user, scale: 3.3}}
+            title="我的"
+            selected={this.state.selectedTab === 'user'}
+            onPress={() => {
+              this.setState({
+                selectedTab: 'user'
+              });
+            }}>
+            <User />
+          </TabBarIOS.Item>
+        </TabBarIOS>
     );
   }
 }
