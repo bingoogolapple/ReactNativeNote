@@ -88,7 +88,26 @@ let styles = StyleSheet.create({
   container: {
     backgroundColor: '#eae7ff',
     flex: 1,
-  }
+  },
+  button: {
+    margin: 10,
+    justifyContent: 'flex-end',
+    marginBottom: 90,
+  },
+  buttonInner: {
+    backgroundColor: '#9182E6',
+    borderRadius: 3,
+    padding: 13,
+  },
+  buttonText: {
+    alignSelf: 'center',
+    color: 'rgba(255, 255, 255, 0.9)',
+  },
+  verticalCenter: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
 
 export { styles as default };

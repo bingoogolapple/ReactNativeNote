@@ -13,12 +13,13 @@ import One from './app/Components/One';
 import Two from './app/Components/Two';
 import Search from './app/Components/Search';
 import User from './app/Components/User';
+import Demo from './app/Components/Demo';
 
 class AwesomeProject extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
-        selectedTab: 'user'
+        selectedTab: 'demo'
       };
   }
 
@@ -26,7 +27,6 @@ class AwesomeProject extends React.Component {
     return (
       <TabBarIOS barTintColor="darkslateblue" tintColor="white">
         <TabBarIOS.Item
-          // systemIcon="featured"
           icon={{uri: icons.star, scale: 4.6}}
           selectedIcon={{uri: icons.starActive, scale: 4.6}}
           title="One"
@@ -69,6 +69,16 @@ class AwesomeProject extends React.Component {
               });
             }}>
             <User />
+          </TabBarIOS.Item>
+          <TabBarIOS.Item
+            systemIcon="featured"
+            selected={this.state.selectedTab === 'demo'}
+            onPress={() => {
+              this.setState({
+                selectedTab: 'demo'
+              });
+            }}>
+            <Demo />
           </TabBarIOS.Item>
         </TabBarIOS>
     );
