@@ -96,6 +96,7 @@ class SearchResult extends React.Component {
       `到底了！开始：${this.state.start}，总共：${this.state.total}`
     );
 
+    // 执行到这里时 this.state.start 已经等于 responseData.start + responseData.count 了
     if (this.state.total > this.state.start) {
       this.loadMore();
     }

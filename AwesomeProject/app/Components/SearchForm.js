@@ -96,9 +96,9 @@ class SearchForm extends React.Component {
       });
   }
 
-  searchHistory() {
-    let newSearchHistory =
-      [...new Set([this.state.query, ...this.state.searchHistory])];
+  addSearchHistory() {
+    // Set去除重复的项目，  ...new Set 把set转成数组
+    let newSearchHistory = [...new Set([this.state.query, ...this.state.searchHistory])];
 
     this.setState({
       searchHistory: newSearchHistory
@@ -110,7 +110,7 @@ class SearchForm extends React.Component {
   }
 
   fetchData() {
-    this.searchHistory();
+    this.addSearchHistory();
 
     this.setState({
       loaded: false,
