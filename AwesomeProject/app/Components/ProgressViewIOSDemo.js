@@ -1,7 +1,7 @@
 'use strict';
 
 import React, {
-  Text,
+  ProgressViewIOS,
   View,
 } from 'react-native';
 
@@ -16,13 +16,14 @@ class ProgressViewIOSDemo extends React.Component {
     return (
       <View style={[styles.container, {
         flexDirection: 'column',
-        paddingTop: 60,
-        paddingBottom: 60
+        paddingTop: 100,
+        paddingBottom: 100
       }]}>
-        <Text style={{
-          alignSelf: 'center',
-          color: 'rgba(255, 255, 255, 0.9)'
-        }}>ProgressViewIOSDemo</Text>
+        <ProgressViewIOS
+          progressTintColor="#ff0000"
+          trackTintColor="#00ff00"
+          progress={0.3}
+        />
       </View>
     );
   }

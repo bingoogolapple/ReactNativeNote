@@ -28,10 +28,10 @@ class DemoList extends React.Component {
         <DemoItem title="DatePickerIOSDemo" handleClick={this.datePicker.bind(this)} />
         <DemoItem title="ModalDemo" handleClick={this.modalDemo.bind(this)} />
         <DemoItem title="PickerIOSDemo" handleClick={this.pickerIOSDemo.bind(this)} />
-        <DemoItem title="Demo4" handleClick={this.demo4.bind(this)} />
-        <DemoItem title="Demo5" handleClick={this.demo5.bind(this)} />
-        <DemoItem title="Demo6" handleClick={this.demo6.bind(this)} />
-        <DemoItem title="Demo7" handleClick={this.demo7.bind(this)} />
+        <DemoItem title="ProgressViewIOSDemo" handleClick={this.progressViewIOSDemo.bind(this)} />
+        <DemoItem title="SegmentedControlIOSDemo" handleClick={this.segmentedControlIOSDemo.bind(this)} />
+        <DemoItem title="SliderIOSDemo" handleClick={this.sliderIOSDemo.bind(this)} />
+        <DemoItem title="SwitchDemo" handleClick={this.switchDemo.bind(this)} />
       </View>
     );
   }
@@ -57,20 +57,32 @@ class DemoList extends React.Component {
     });
   }
 
-  demo4() {
-
+  progressViewIOSDemo() {
+    this.props.navigator.push({
+      title: "ProgressViewIOSDemo",
+      component: ProgressViewIOSDemo,
+    });
   }
 
-  demo5() {
-
+  segmentedControlIOSDemo() {
+    this.props.navigator.push({
+      title: "SegmentedControlIOSDemo",
+      component: SegmentedControlIOSDemo,
+    });
   }
 
-  demo6() {
-
+  sliderIOSDemo() {
+    this.props.navigator.push({
+      title: "SliderIOSDemo",
+      component: SliderIOSDemo,
+    });
   }
 
-  demo7() {
-
+  switchDemo() {
+    this.props.navigator.push({
+      title: "SwitchDemo",
+      component: SwitchDemo,
+    });
   }
 }
 
